@@ -1,16 +1,15 @@
 import { defineConfig } from 'vite';
 import { sites } from '@openai/sites-vite-plugin';
+import { mkdir, writeFile } from 'node:fs/promises';
 
 export default defineConfig({
   plugins: [
     sites(),
     {
       name: 'playground-worker-entry',
-      generateBundle() {
-        this.emitFile({
-          type: 'asset',
-          fileName: 'server/index.js',
-          source: `export default {
+      async closeBundle() {
+        await mkdir('dist/server', { recursive: true });
+        await writeFile('dist/server/index.js', `export default {
   async fetch(request, env) {
     const response = await env.ASSETS.fetch(request);
     if (response.status !== 404) return response;
@@ -20,9 +19,11 @@ export default defineConfig({
     }
     return response;
   }
-};\n`,
-        });
+};\n`);
       },
     },
   ],
+  build: {
+    outDir: 'dist/client',
+  },
 });
