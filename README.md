@@ -1,6 +1,6 @@
-# Kiki's Creative Playground
+# Kiki Arcade
 
-A responsive collection of 14 creative toys, arcade classics, and miniature adventures presented through one cohesive playground.
+A responsive collection of 14 creative toys, arcade classics, and miniature adventures presented through one cohesive arcade.
 
 ## Featured Adventures
 
@@ -10,7 +10,7 @@ A responsive collection of 14 creative toys, arcade classics, and miniature adve
 - **Patchwork Odyssey** — a three-chapter platform journey with collectibles, gliding, bounce pads, and persistent completion.
 - **Paper Skies** — a three-course paper-airplane adventure with flight physics, updrafts, stamp rings, damage, and landing challenges.
 
-## Creative Playground
+## Creative Studio
 
 - **Ganvas** — pixel painting with brush, eraser, flood fill, undo, sizing, rainbow color, and PNG export.
 - **Ticking Room** — a time-controlled ambient room with optional sound and motion preferences.
@@ -27,7 +27,7 @@ A responsive collection of 14 creative toys, arcade classics, and miniature adve
 
 ## Highlights
 
-- Full-screen responsive interface with distinct game accents and a shared Playground identity
+- Full-screen responsive interface with distinct game accents and a shared Kiki Arcade identity
 - Keyboard, pointer, touch, swipe, and on-screen controls where appropriate
 - Reduced-motion support and accessible labels, status updates, and focus states
 - Local browser persistence for scores, records, unlocks, preferences, and progression

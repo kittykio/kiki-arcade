@@ -31,7 +31,7 @@ const experiences = [
 
 const collections = [
   { id: 'adventures', kicker: 'Big worlds, small screen', title: 'Featured Adventures', note: 'Explore, defend, fly, and discover.' },
-  { id: 'creative', kicker: 'The original toybox', title: 'Creative Playground', note: 'Make something, unwind, or chase a score.' },
+  { id: 'creative', kicker: 'The original toybox', title: 'Creative Studio', note: 'Make something, unwind, or chase a score.' },
   { id: 'classics', kicker: 'Quick, familiar, polished', title: 'Arcade Classics', note: 'Perfect for one more round.' },
 ];
 
@@ -41,9 +41,9 @@ const iconMarkup = (item) => item.iconImage
 
 const app = document.querySelector('#app');
 app.innerHTML = `
-  <main id="playground" class="shell" data-view="home">
+  <main id="arcade" class="shell" data-view="home">
     <header class="topbar">
-      <a class="brand" href="#home" aria-label="Creative Playground home"><span class="playground-logo brand-logo" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></span><span>Kiki's Playground</span></a>
+      <a class="brand" href="#home" aria-label="Kiki Arcade home"><span class="playground-logo brand-logo" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></span><span>Kiki Arcade</span></a>
       <div class="top-actions">
         <span class="clock" aria-label="Current time"></span>
         <button class="preference-button motion-toggle" type="button" aria-pressed="false">Motion: Full</button>
@@ -51,7 +51,7 @@ app.innerHTML = `
     </header>
     <section class="home-view" aria-labelledby="welcome-title">
       <div class="welcome-copy">
-        <div><p class="eyebrow"><span class="playground-logo hero-logo" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></span><span>Kiki's ever-growing toybox</span></p><h1 id="welcome-title">Choose your<br><em>next little adventure.</em></h1></div>
+        <div><p class="eyebrow"><span class="playground-logo hero-logo" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></span><span>Kiki's ever-growing arcade</span></p><h1 id="welcome-title">Choose your<br><em>next little adventure.</em></h1></div>
         <div class="welcome-note"><b>${experiences.length} things to play</b><p>Make art, chase high scores, explore tiny worlds, or simply slow down for a minute.</p><a href="#game-collections">Explore the collection ↓</a></div>
       </div>
       <div class="launcher-grid" id="game-collections"></div>
@@ -78,7 +78,7 @@ launcher.innerHTML = collections.map(collection => {
       return `<button class="launch-card" style="--accent:${item.color};--delay:${index * 45}ms" data-app="${item.id}">
         <span class="card-number">${String(index + 1).padStart(2, '0')}</span>
         <span class="card-art" aria-hidden="true"><i></i><i></i><i></i><span class="card-icon">${iconMarkup(item)}</span></span>
-        <span class="card-copy"><small>${collection.id === 'adventures' ? 'Adventure' : collection.id === 'creative' ? 'Playground toy' : 'Classic'}</small><strong>${item.title}</strong><em>${item.subtitle}</em></span><span class="card-arrow">Play ↗</span>
+        <span class="card-copy"><small>${collection.id === 'adventures' ? 'Adventure' : collection.id === 'creative' ? 'Creative toy' : 'Classic'}</small><strong>${item.title}</strong><em>${item.subtitle}</em></span><span class="card-arrow">Play ↗</span>
       </button>`;
     }).join('')}</div>
   </section>`;
@@ -102,7 +102,7 @@ function openExperience(id, updateHash = true) {
   app.querySelector('.window-title').innerHTML = `<span style="color:${item.color}">${iconMarkup(item)}</span> ${item.title}`;
   stage.replaceChildren();
   cleanup = item.mount(stage, settings) || (() => {});
-  document.title = `${item.title} · Creative Playground`;
+  document.title = `${item.title} · Kiki Arcade`;
   if (updateHash) history.pushState(null, '', `#${id}`);
   app.querySelector('.back-button').focus();
 }
@@ -113,7 +113,7 @@ function showHome(updateHash = true) {
   app.querySelector('.shell').dataset.view = 'home';
   app.querySelector('.shell').style.removeProperty('--app-accent');
   document.body.style.removeProperty('--app-accent');
-  document.title = "Kiki's Creative Playground";
+  document.title = 'Kiki Arcade';
   if (updateHash) history.pushState(null, '', '#home');
 }
 
