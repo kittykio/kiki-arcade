@@ -1,6 +1,6 @@
 # Kiki Arcade
 
-A responsive collection of 14 creative toys, arcade classics, and miniature adventures presented as one playful world.
+A responsive collection of several creative toys, arcade classics, and miniature adventures presented as one playful world.
 
 ## Featured Adventures
 
