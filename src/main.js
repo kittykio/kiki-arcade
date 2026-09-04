@@ -41,9 +41,9 @@ const iconMarkup = (item) => item.iconImage
 
 const app = document.querySelector('#app');
 app.innerHTML = `
-  <main id="world" class="shell" data-view="home">
+  <main id="arcade" class="shell" data-view="home">
     <header class="topbar">
-      <a class="brand" href="#home" aria-label="Kiki World home"><span class="playground-logo brand-logo" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></span><span>Kiki World</span></a>
+      <a class="brand" href="#home" aria-label="Kiki Arcade home"><span class="playground-logo brand-logo" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></span><span>Kiki Arcade</span></a>
       <div class="top-actions">
         <span class="clock" aria-label="Current time"></span>
         <button class="preference-button motion-toggle" type="button" aria-pressed="false">Motion: Full</button>
@@ -102,7 +102,7 @@ function openExperience(id, updateHash = true) {
   app.querySelector('.window-title').innerHTML = `<span style="color:${item.color}">${iconMarkup(item)}</span> ${item.title}`;
   stage.replaceChildren();
   cleanup = item.mount(stage, settings) || (() => {});
-  document.title = `${item.title} · Kiki World`;
+  document.title = `${item.title} · Kiki Arcade`;
   if (updateHash) history.pushState(null, '', `#${id}`);
   app.querySelector('.back-button').focus();
 }
@@ -113,7 +113,7 @@ function showHome(updateHash = true) {
   app.querySelector('.shell').dataset.view = 'home';
   app.querySelector('.shell').style.removeProperty('--app-accent');
   document.body.style.removeProperty('--app-accent');
-  document.title = 'Kiki World';
+  document.title = 'Kiki Arcade';
   if (updateHash) history.pushState(null, '', '#home');
 }
 

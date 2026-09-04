@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [
     sites(),
     {
-      name: 'kiki-world-worker-entry',
+    name: 'kiki-arcade-worker-entry',
       async closeBundle() {
         await mkdir('dist/server', { recursive: true });
         await writeFile('dist/server/index.js', `export default {
