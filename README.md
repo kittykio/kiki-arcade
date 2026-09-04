@@ -1,6 +1,6 @@
-# Kiki Arcade
+# Kiki World
 
-A responsive collection of 14 creative toys, arcade classics, and miniature adventures presented through one cohesive arcade.
+A responsive collection of 14 creative toys, arcade classics, and miniature adventures presented as one playful world.
 
 ## Featured Adventures
 
@@ -27,7 +27,7 @@ A responsive collection of 14 creative toys, arcade classics, and miniature adve
 
 ## Highlights
 
-- Full-screen responsive interface with distinct game accents and a shared Kiki Arcade identity
+- Full-screen responsive interface with distinct game accents and a shared Kiki World identity
 - Keyboard, pointer, touch, swipe, and on-screen controls where appropriate
 - Reduced-motion support and accessible labels, status updates, and focus states
 - Local browser persistence for scores, records, unlocks, preferences, and progression

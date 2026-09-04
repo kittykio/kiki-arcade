@@ -41,9 +41,9 @@ const iconMarkup = (item) => item.iconImage
 
 const app = document.querySelector('#app');
 app.innerHTML = `
-  <main id="arcade" class="shell" data-view="home">
+  <main id="world" class="shell" data-view="home">
     <header class="topbar">
-      <a class="brand" href="#home" aria-label="Kiki Arcade home"><span class="playground-logo brand-logo" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></span><span>Kiki Arcade</span></a>
+      <a class="brand" href="#home" aria-label="Kiki World home"><span class="playground-logo brand-logo" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></span><span>Kiki World</span></a>
       <div class="top-actions">
         <span class="clock" aria-label="Current time"></span>
         <button class="preference-button motion-toggle" type="button" aria-pressed="false">Motion: Full</button>
@@ -51,7 +51,7 @@ app.innerHTML = `
     </header>
     <section class="home-view" aria-labelledby="welcome-title">
       <div class="welcome-copy">
-        <div><p class="eyebrow"><span class="playground-logo hero-logo" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></span><span>Kiki's ever-growing arcade</span></p><h1 id="welcome-title">Choose your<br><em>next little adventure.</em></h1></div>
+        <div><p class="eyebrow"><span class="playground-logo hero-logo" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></span><span>Welcome to Kiki's little world</span></p><h1 id="welcome-title">Choose your<br><em>next little adventure.</em></h1></div>
         <div class="welcome-note"><b>${experiences.length} things to play</b><p>Make art, chase high scores, explore tiny worlds, or simply slow down for a minute.</p><a href="#game-collections">Explore the collection ↓</a></div>
       </div>
       <div class="launcher-grid" id="game-collections"></div>
@@ -102,7 +102,7 @@ function openExperience(id, updateHash = true) {
   app.querySelector('.window-title').innerHTML = `<span style="color:${item.color}">${iconMarkup(item)}</span> ${item.title}`;
   stage.replaceChildren();
   cleanup = item.mount(stage, settings) || (() => {});
-  document.title = `${item.title} · Kiki Arcade`;
+  document.title = `${item.title} · Kiki World`;
   if (updateHash) history.pushState(null, '', `#${id}`);
   app.querySelector('.back-button').focus();
 }
@@ -113,7 +113,7 @@ function showHome(updateHash = true) {
   app.querySelector('.shell').dataset.view = 'home';
   app.querySelector('.shell').style.removeProperty('--app-accent');
   document.body.style.removeProperty('--app-accent');
-  document.title = 'Kiki Arcade';
+  document.title = 'Kiki World';
   if (updateHash) history.pushState(null, '', '#home');
 }
 
